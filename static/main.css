@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  height: 80vh;
+}
+
+canvas {
+  border: 1px solid black;
+}
+
+#header {
+  position: sticky;
+  position: -webkit-sticky;
+  display: block;
+  top: 0;
+  background-color: gold;
+  color: navy;
+  font-size: 24px;
+}
+
+p {
+  margin: 0;
+}
