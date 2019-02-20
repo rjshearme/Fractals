@@ -1,39 +1,23 @@
-let segments = [];
-let limit = 14;
-let count = 0;
-
-function addAll(arr, list) {
-  for (let s of arr) {
-    list.push(s);
-  }
-}
+let dragon = new Dragon();
 
 function setup() {
-  createCanvas(600, 600);
-  let a = createVector(0, 0);
-  let b = createVector(50, 0);
-  let s1 = new Segment(a, b);
-  segments.push(s1);
+  createCanvas(1000, 1000);
+  background(0);
+  stroke(255);
+  strokeWeight(1);
+  translate(width/2, height/2)
+  scale(1,-1);
+
+  a = createVector(0, 0);
+  b = createVector(0, 5);
+  dragon.segs[0] = new Segment(a, b);
+  dragon.show();
 }
 
 function mousePressed() {
-  if (count < limit) {
-    let nextGeneration = [];
-    for (let s of segments) {
-      let children = s.generate();
-      addAll(children, nextGeneration);
-    }
-    segments = nextGeneration;
-    count++;
-  }
-}
+  stroke(random(255),random(255),random(255));
+  dragon.generate();
 
+  dragon.show();
 
-function draw() {
-  background(0);
-  stroke(255);
-  translate(300, 300);
-  for (let s of segments) {
-    s.show();
-  }
 }

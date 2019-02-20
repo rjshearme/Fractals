@@ -1,9 +1,10 @@
 mandelCount = 0.75;
 mandelLimit = 35;
+var xSet = new Set();
+var ySet = new Set();
 
 
 function mandelSetup() {
-  mandelPressed();
   fill("black");
   rect(0,0,dims/3, dims/3);
 }
@@ -34,6 +35,9 @@ function mandelPressed() {
     stroke("black");
     for(var x=0; x < width/3; x++) {
        for(var y=0; y < height/3; y++) {
+         if (xSet.has(x) && ySet.has(y)){
+           continue;
+         } else {
           let a = map(x, 0, width/3, -2, 0.47);
           let b = map(y, 0, width/3, -1.12, 1.12);
           let n = check(a,b);
@@ -42,6 +46,7 @@ function mandelPressed() {
           if (n > 0) {
               point(x,y);
            }
+         }
        }
     }
   }

@@ -6,9 +6,9 @@ function kochSetup() {
   let len = dims/3
   let h = len * sqrt(3) / 2;
 
-  let a = createVector(dims*2/3, dims * 17/18);
-  let b = createVector(dims, dims*17/18);
-  let c = createVector(dims*5/6, dims*2/3);
+  let a = createVector(dims*2/3 + 1/36 * dims, dims * 33/36);
+  let b = createVector(dims - 1/36 * dims, dims*33/36);
+  let c = createVector(dims*5/6, dims*2/3 + dims/36);
 
   let k1 = new Koch(a, b);
   let k2 = new Koch(b, c);
@@ -67,7 +67,6 @@ class Koch {
   }
 
   show() {
-    stroke(255);
     line(this.a.x, this.a.y, this.b.x, this.b.y);
   }
 }

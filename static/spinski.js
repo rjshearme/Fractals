@@ -18,7 +18,6 @@ function spinskiSetup() {
 function spinskiPressed() {
   if (triCount < triLimit) {
     let nextGeneration = [];
-
     for (let t of spinskis) {
       let children = t.generate();
       addAll(children, nextGeneration);
@@ -60,7 +59,6 @@ class Triangle {
   }
 
   show() {
-    stroke(255);
     line(this.a.x, this.a.y, this.b.x, this.b.y);
     line(this.a.x, this.a.y, this.c.x, this.c.y);
     line(this.b.x, this.b.y, this.c.x, this.c.y);

@@ -1,10 +1,10 @@
 let dragons = [];
-let dragonLimit = 16;
+let dragonLimit = 14;
 let dragonCount = 0;
 
 function dragonSetup() {
-  let a = createVector(dims/3 + dims/12, dims/2);
-  let b = createVector(dims*2/3 - dims/12, dims/2);
+  let a = createVector(dims/12, dims/2);
+  let b = createVector(dims/4, dims/2);
   let d1 = new Dragon(a, b);
   dragons.push(d1);
   d1.show();
@@ -14,7 +14,7 @@ function dragonPressed() {
   if (dragonCount < dragonLimit) {
     let nextGeneration = [];
     let inorout = true;
-    rect(dims/3, dims/3, dims/3, dims/3);
+    rect(0, dims/3, dims/3, dims/3);
     for (let d of dragons) {
       let children = d.generate(inorout);
       inorout = (inorout) ? false : true;
@@ -55,7 +55,6 @@ class Dragon {
   }
 
   show() {
-    stroke(255);
     line(this.a.x, this.a.y, this.b.x, this.b.y);
   }
 }
