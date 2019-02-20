@@ -1,0 +1,1 @@
+This is just a small project (in progress) in which I use JavaScript to iterate a fractal when the user clicks on it.H
