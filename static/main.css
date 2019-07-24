@@ -1,6 +1,7 @@
 body {
   margin: 0;
   height: 80vh;
+  background-color: black;
 }
 
 canvas {
